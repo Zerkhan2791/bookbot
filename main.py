@@ -1,3 +1,5 @@
+import string
+
 def main():
     book_path = "books/frankenstein.txt"
     text = get_book_text(book_path)
@@ -20,16 +22,12 @@ def get_num_words(text):
 
 
 def get_book_text(path):
-    with open(path) as f:
+    with open(path, encoding='UTF-8') as f:
         return f.read()
 
 def char_analysis(text):
     converted_text = text.lower()
-    alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-    character_totals = {}
-    for letter in alphabet:
-        char_count = converted_text.count(letter)
-        character_totals[letter] = char_count
-    return character_totals
+    alphabet = string.ascii_lowercase
+    return {letter: converted_text.count(letter) for letter in alphabet}
 
 main()
