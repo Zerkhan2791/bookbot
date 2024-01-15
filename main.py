@@ -6,7 +6,7 @@ def main():
     list_letters = list(analysis_unparsed.keys())
     num_letters = list(analysis_unparsed.values())
     
-    print(f"--- Begin report of {book_path} ---\n")
+    print(f"--- Beginning report of {book_path} ---\n")
     print(f"{num_words} words found in the document.\n")
     
     for i in range(len(num_letters)):
